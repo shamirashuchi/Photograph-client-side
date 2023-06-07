@@ -1,0 +1,83 @@
+[
+    {
+      "image": "path_to_image_1.jpg",
+      "name": "Introduction to Landscape Photography",
+      "instructor": "John Smith",
+      "email": "john@example.com",
+      "availableSeats": 10,
+      "numStudents": 5,
+      "price": 200,
+      "status": "pending"
+    },
+    {
+      "image": "path_to_image_2.jpg",
+      "name": "Portrait Photography Masterclass",
+      "instructor": "Sarah Johnson",
+      "email": "sarah@example.com",
+      "availableSeats": 5,
+      "numStudents": 3,
+      "price": 300,
+      "status": "pending"
+    },
+    {
+      "image": "path_to_image_3.jpg",
+      "name": "Wildlife Photography Expedition",
+      "instructor": "David Thompson",
+      "email": "david@example.com",
+      "availableSeats": 8,
+      "numStudents": 6,
+      "price": 400,
+      "status": "pending"
+    },
+    {
+      "image": "path_to_image_4.jpg",
+      "name": "Street Photography Workshop",
+      "instructor": "Emily Rodriguez",
+      "email": "emily@example.com",
+      "availableSeats": 12,
+      "numStudents": 10,
+      "price": 150,
+      "status": "pending"
+    },
+    {
+      "image": "path_to_image_5.jpg",
+      "name": "Astrophotography Night Sky Tour",
+      "instructor": "Michael Anderson",
+      "email": "michael@example.com",
+      "availableSeats": 6,
+      "numStudents": 2,
+      "price": 250,
+      "status": "pending"
+    },
+    {
+      "image": "path_to_image_6.jpg",
+      "name": "Fashion Photography Intensive Course",
+      "instructor": "Sophia Martinez",
+      "email": "sophia@example.com",
+      "availableSeats": 3,
+      "numStudents": 1,
+      "price": 500,
+      "status": "pending"
+    },
+    {
+      "image": "path_to_image_7.jpg",
+      "name": "Travel Photography Adventure",
+      "instructor": "Robert Wilson",
+      "email": "robert@example.com",
+      "availableSeats": 10,
+      "numStudents": 7,
+      "price": 350,
+      "status": "pending"
+    },
+    {
+      "image": "path_to_image_8.jpg",
+      "name": "Food Photography Masterclass",
+      "instructor": "Isabella Thompson",
+      "email": "isabella@example.com",
+      "availableSeats": 7,
+      "numStudents": 4,
+      "price": 180,
+      "status": "pending"
+    }
+  ]
+  
