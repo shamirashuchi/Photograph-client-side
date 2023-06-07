@@ -23,6 +23,7 @@ const Banner = () => {
       };
     return (
         <div>
+            <h2 className='text-5xl mt-10 mb-10 text-center text-purple-600 underline'>ClickHaven</h2>
             <Carousel responsive={responsive}>
                 <div>
                     <div className="card w-96 bg-base-100 shadow-xl h-96">
@@ -51,7 +52,8 @@ const Banner = () => {
                             </div>
                     </div>
                 </div>
-                <div><div className="card w-96 bg-base-100 shadow-xl h-96">
+                <div>
+                    <div className="card w-96 bg-base-100 shadow-xl h-96">
                             <figure><img src="starry-night-sky.avif" alt="Shoes" /></figure>
                             <div className="card-body">
                                 <h2 className="card-title">Night Photography</h2>
