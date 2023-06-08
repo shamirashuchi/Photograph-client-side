@@ -1,7 +1,52 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from '../../Providers/Authprovider';
+import { useLocation, useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const Classdata = ({item}) => {
-    const {image,name,instructor,availableSeats,price} = item;
+    const {image,name,instructor,availableSeats,price,_id,instructorImage,status,numStudents} = item;
+    const {user} = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+    const handleselecteddata = item => {
+        console.log(item);
+        if(user && user.email){
+            const selectedItem = {selectedItemId: _id, name, image,instructor,email: user.email,instructorImage,numStudents,availableSeats, price,status}
+            fetch('http://localhost:2000/selects', {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(selectedItem)
+            })
+            .then(res => res.json())
+            .then(data => {
+                if(data.insertedId){
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'class added.',
+                        showConfirmButton: false,
+                        timer: 1500
+                      })
+                }
+            })
+        }
+        else{
+            Swal.fire({
+                title: 'Please login to order the food',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Login now!'
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  navigate('/login', {state: {from: location}})
+                }
+              })
+        }
+    }
     return (
         <div className='flex'>
                <div className="card w-96 bg-base-100 shadow-xl">
@@ -12,7 +57,7 @@ const Classdata = ({item}) => {
                         <p><span className='font-semibold text-xl'>AvailableSeats:</span> {availableSeats}</p>
                         <p><span className='font-semibold text-xl'>Price:</span> ${price}</p>
                         <div className="card-actions justify-end">
-                        <button className="btn bg-purple-600">Select</button>
+                        <button onClick={() => handleselecteddata(item)} className="btn bg-purple-600">Select</button>
                         </div>
                     </div>
                 </div>
