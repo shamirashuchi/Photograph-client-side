@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Providers/Authprovider';
 
 const Header = () => {
+    const { user, logOut } = useContext(AuthContext);
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => console.log(error));
+    }
     return (
                     <div className="navbar bg-purple-500">
             <div className="navbar-start">
@@ -11,9 +18,18 @@ const Header = () => {
                 </label>
                 <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 text-white">
                     <Link to="/"><li><a>Home</a></li></Link>
-                    <Link to="/login"><li><a>Login</a></li></Link>
                     <Link to="/instructor"><li><a>Instructors</a></li></Link>
                     <Link to="/class"><li><a>Class</a></li></Link>
+                    {
+            user ? <>
+                <span>
+                    <img className='h-8 w-8 rounded' src={user?.photoURL} alt="" />
+                    </span>
+                <button onClick={handleLogOut} className="btn btn-ghost">LogOut</button>
+            </> : <>
+                <li><Link to="/login">Login</Link></li>
+            </>
+        }
                 </ul>
                 </div>
                 <a className="btn btn-ghost normal-case text-xl text-white">ClickHaven</a>
@@ -21,13 +37,19 @@ const Header = () => {
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1 text-white">
                 <Link to="/"><li><a>Home</a></li></Link>
-                <Link to='/login'><li><a>Login</a></li></Link>
                 <Link to="/instructor"><li><a>Instructors</a></li></Link>
                 <Link to="/class"><li><a>Class</a></li></Link>
+                {
+            user ? <>
+                <span>
+                    <img className='h-8 w-8 rounded' src={user?.photoURL} alt="" />
+                    </span>
+                <button onClick={handleLogOut} className="btn btn-ghost">LogOut</button>
+            </> : <>
+                <li><Link to="/login">Login</Link></li>
+            </>
+        }
                 </ul>
-            </div>
-            <div className="navbar-end">
-                <a className="btn">Button</a>
             </div>
             </div>
     );

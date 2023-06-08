@@ -1,8 +1,8 @@
 import React, { useContext, useEffect,useState } from 'react';
-import { AuthContext } from '../../Providers/Authprovider';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
-import SocialLogin from '../../Shared/SocialLogin/SocialLogin';
+import { AuthContext } from '../../../Providers/Authprovider';
+import SocialLogin from '../../../Shared/SocialLogin/SocialLogin';
 const Login = () => {
     const {signIn} = useContext(AuthContext);
     const navigate = useNavigate();
@@ -37,28 +37,27 @@ const Login = () => {
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className="text-center md:w-1/2 lg:text-left">
                 <h1 className="text-5xl font-bold">Login now!</h1>
-                <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
                 </div>
-                <div className="card lg:w-1/3 max-w-sm shadow-2xl bg-base-100">
+                <div className="card lg:w-full max-w-sm shadow-2xl bg-base-100">
                 <form onSubmit={handleLogin} className="card-body">
                     <div className="form-control">
                     <label className="label">
-                        <span className="label-text">Email</span>
+                        <span className="label-text text-purple-600">Email</span>
                     </label>
                     <input type="email" name="email" placeholder="email" className="input input-bordered w-80"  />
                     </div>
                     <div className="form-control">
                     <label className="label">
-                        <span className="label-text">Password</span>
+                        <span className="label-text text-purple-600">Password</span>
                     </label>
                     <input type="password" name="password" placeholder="password" className="input input-bordered w-80" />
                     </div>
                     <div className="form-control mt-6">
-                    <input disabled={false} className="btn btn-primary w-80" type="submit" value="Login" />
+                    <input disabled={false} className="btn bg-purple-600 w-80" type="submit" value="Login" />
                     </div>
                 </form>
-                <p><small>New Here?<Link to="/signup">create an account</Link></small></p>
-                <SocialLogin></SocialLogin>
+                <p className='text-purple-600'><small>New Here?<Link to="/signup">create an account</Link></small></p>
+                {/* <SocialLogin></SocialLogin> */}
                 </div>
             </div>
         </div>
