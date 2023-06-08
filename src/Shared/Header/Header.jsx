@@ -12,6 +12,8 @@ const Header = () => {
                 <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 text-white">
                     <Link to="/"><li><a>Home</a></li></Link>
                     <Link to="/login"><li><a>Login</a></li></Link>
+                    <Link to="/instructor"><li><a>Instructors</a></li></Link>
+                    <Link to="/class"><li><a>Class</a></li></Link>
                 </ul>
                 </div>
                 <a className="btn btn-ghost normal-case text-xl text-white">ClickHaven</a>
@@ -20,6 +22,8 @@ const Header = () => {
                 <ul className="menu menu-horizontal px-1 text-white">
                 <Link to="/"><li><a>Home</a></li></Link>
                 <Link to='/login'><li><a>Login</a></li></Link>
+                <Link to="/instructor"><li><a>Instructors</a></li></Link>
+                <Link to="/class"><li><a>Class</a></li></Link>
                 </ul>
             </div>
             <div className="navbar-end">

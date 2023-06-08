@@ -61,6 +61,15 @@ const Banner = () => {
                             </div>
                     </div>
                 </div>
+                <div>
+                    <div className="card w-96 bg-base-100 shadow-xl h-96">
+                            <figure><img className='w-full' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR05SfYYKg53G7wFsCIvsk9D9Dv_4yI-RXO4C1Hj7vI_Q&s" alt="Shoes" /></figure>
+                            <div className="card-body">
+                                <h2 className="card-title">Wildlife Photography</h2>
+                                <p>Wildlife photography is a genre of photography that focuses on capturing images of animals and their natural habitats in the wild.</p>
+                            </div>
+                    </div>
+                </div>
             </Carousel>
         </div>
     );
