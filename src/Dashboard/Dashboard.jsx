@@ -2,10 +2,13 @@ import React, { useContext } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import { SiGoogleclassroom } from "react-icons/si";
 import { AuthContext } from '../Providers/Authprovider';
+import useAdmin from '../Hooks/useAdmin';
+import useInstructor from '../Hooks/useInstructor';
 const Dashboard = () => {
     const {user} = useContext(AuthContext);
-    const isAdmin =true;
-    const isinstructor = false;
+    const [isAdmin] =useAdmin();
+    const [isInstructor] = useInstructor();
+    
     return (
         <div>
             <div className="drawer lg:drawer-open">
@@ -27,7 +30,7 @@ const Dashboard = () => {
                     </>
                 }
                 {
-                    isinstructor &&
+                    isInstructor &&
                     <>
                          <li><Link>Add Class</Link></li>  
                     </>
