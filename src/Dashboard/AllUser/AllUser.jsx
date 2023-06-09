@@ -58,7 +58,6 @@ const AllUser = () => {
                         <th>Email</th>
                         <th>Makeadmin</th>
                         <th>MakeInstructor</th>
-                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
