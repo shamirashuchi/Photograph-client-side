@@ -11,6 +11,8 @@ import Signup from "../Pages/Signup/Signup";
 import Dashboard from "../Dashboard/Dashboard";
 import Myclass from "../Pages/Dashboard/Myclass";
 import PrivateRoute from "./PrivateRoute";
+import AllUser from "../Dashboard/AllUser/AllUser";
+import AllClass from "../Dashboard/AllClass/AllClass";
 export const router = createBrowserRouter([
     {
       path: "/",
@@ -46,6 +48,14 @@ export const router = createBrowserRouter([
         {
           path:"myclass",
           element:<Myclass></Myclass>
+        },
+        {
+          path:"alluser",
+          element:<AllUser></AllUser>
+        },
+        {
+          path:"allclass",
+          element:<AllClass></AllClass>
         }
       ]
     }
