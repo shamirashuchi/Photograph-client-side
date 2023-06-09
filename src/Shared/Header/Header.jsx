@@ -20,16 +20,17 @@ const Header = () => {
                     <Link to="/"><li><a>Home</a></li></Link>
                     <Link to="/instructor"><li><a>Instructors</a></li></Link>
                     <Link to="/class"><li><a>Class</a></li></Link>
+                    <Link to="/dashboard/myclass"><li><a>Dashboard</a></li></Link>
                     {
-            user ? <>
-                <span>
-                    <img className='h-8 w-8 rounded' src={user?.photoURL} alt="" />
-                    </span>
-                <button onClick={handleLogOut} className="btn btn-ghost">LogOut</button>
-            </> : <>
-                <li><Link to="/login">Login</Link></li>
-            </>
-        }
+                        user ? <>
+                            <span>
+                                <img className='h-8 w-8 rounded' src={user?.photoURL} alt="" />
+                                </span>
+                            <button onClick={handleLogOut} className="btn btn-ghost">LogOut</button>
+                        </> : <>
+                            <li><Link to="/login">Login</Link></li>
+                        </>
+                    }
                 </ul>
                 </div>
                 <a className="btn btn-ghost normal-case text-xl text-white">ClickHaven</a>
@@ -39,6 +40,7 @@ const Header = () => {
                 <Link to="/"><li><a>Home</a></li></Link>
                 <Link to="/instructor"><li><a>Instructors</a></li></Link>
                 <Link to="/class"><li><a>Class</a></li></Link>
+                <Link to="/dashboard/myclass"><li><a>Dashboard</a></li></Link>
                 {
             user ? <>
                 <span>

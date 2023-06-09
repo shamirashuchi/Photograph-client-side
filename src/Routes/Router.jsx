@@ -8,6 +8,8 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Instructors from "../Pages/Instructors/Instructors";
 import Class from "../Pages/Class/Class";
 import Signup from "../Pages/Signup/Signup";
+import Dashboard from "../Dashboard/Dashboard";
+import Myclass from "../Pages/Dashboard/Myclass";
 export const router = createBrowserRouter([
     {
       path: "/",
@@ -36,4 +38,14 @@ export const router = createBrowserRouter([
         }
       ]
     },
+    {
+      path:"/dashboard",
+      element:<Dashboard></Dashboard>,
+      children:[
+        {
+          path:"myclass",
+          element:<Myclass></Myclass>
+        }
+      ]
+    }
   ]);
