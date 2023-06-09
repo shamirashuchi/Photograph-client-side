@@ -4,10 +4,12 @@ import { SiGoogleclassroom } from "react-icons/si";
 import { AuthContext } from '../Providers/Authprovider';
 import useAdmin from '../Hooks/useAdmin';
 import useInstructor from '../Hooks/useInstructor';
+import useStudent from '../Hooks/useStudent';
 const Dashboard = () => {
     const {user} = useContext(AuthContext);
     const [isAdmin] =useAdmin();
     const [isInstructor] = useInstructor();
+    const [isStudent] = useStudent();
     
     return (
         <div>
@@ -33,13 +35,16 @@ const Dashboard = () => {
                     isInstructor &&
                     <>
                          <li><Link>Add Class</Link></li>  
+                         <li><Link to="/dashboard/myclass"><SiGoogleclassroom></SiGoogleclassroom>Myclass</Link></li>
                     </>
+                }
+                {
+                    isStudent && <li><Link to="/dashboard/myclass"><SiGoogleclassroom></SiGoogleclassroom>Myclass</Link></li>
                 }
                 <div className="divider"></div>
                 <Link to="/"><li><a>Home</a></li></Link>
                 <Link to="/instructor"><li><a>Instructors</a></li></Link>
                 <Link to="/class"><li><a>Class</a></li></Link>
-                <li><Link to="/dashboard/myclass"><SiGoogleclassroom></SiGoogleclassroom>Myclass</Link></li>
                 </ul>
            </div>
            </div>

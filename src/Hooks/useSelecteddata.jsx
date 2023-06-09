@@ -9,7 +9,7 @@ const useSelecteddata = () => {
   const token = localStorage.getItem('access-token');
   const { refetch, data: classdata = [] } = useQuery({
     queryKey: ['selects', user?.email],
-    enabled: !!user,
+    enabled: !!user && !loading,
     queryFn: async () => {
       const res = await axiosSecure.get(`/selects?email=${user?.email}`);
       return res.data;
