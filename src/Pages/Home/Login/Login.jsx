@@ -57,7 +57,7 @@ const Login = () => {
                     </div>
                 </form>
                 <p className='text-purple-600'><small>New Here?<Link to="/signup">create an account</Link></small></p>
-                {/* <SocialLogin></SocialLogin> */}
+                <SocialLogin></SocialLogin>
                 </div>
             </div>
         </div>

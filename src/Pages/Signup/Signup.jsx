@@ -96,7 +96,7 @@ const Signup = () => {
                     </div>
                 </form>
                 <p className='text-purple-600'><small>Already have an account <Link to="/login">Login</Link></small></p>
-                {/* <SocialLogin></SocialLogin> */}
+                <SocialLogin></SocialLogin>
                 </div>
             </div>
           </div>
