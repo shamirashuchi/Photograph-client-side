@@ -34,7 +34,7 @@ const Dashboard = () => {
                 {
                     isInstructor &&
                     <>
-                         <li><Link>Add Class</Link></li>  
+                         <li><Link to="/dashboard/addclass">Add Class</Link></li>  
                          <li><Link to="/dashboard/myclass"><SiGoogleclassroom></SiGoogleclassroom>Myclass</Link></li>
                     </>
                 }
