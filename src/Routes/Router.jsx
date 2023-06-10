@@ -17,6 +17,7 @@ import Addclass from "../Dashboard/Addclass/Addclass";
 import Payment from "../Dashboard/Payment";
 import Myenroll from "../Dashboard/Myenroll/Myenroll";
 import Feedback from "../Dashboard/Feedback";
+import Instructormyclass from "../Pages/Dashboard/Instructormyclass";
 export const router = createBrowserRouter([
     {
       path: "/",
@@ -76,6 +77,10 @@ export const router = createBrowserRouter([
         {
           path:'feedback',
           element:<Feedback></Feedback>
+        },
+        {
+          path:"instructormyclass",
+          element:<Instructormyclass></Instructormyclass>
         }
       ]
     }

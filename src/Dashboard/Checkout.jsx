@@ -6,6 +6,30 @@ import { AuthContext } from '../Providers/Authprovider';
 import useAxiosSecure from '../Hooks/useAxiosSecure';
 
 const Checkout = ({classdata,price}) => {
+    const handleClick = (classdata) => {
+        classdata.map(item => {
+            console.log("Clicked with data:", item.availableSeats);
+            console.log("Clicked with data:", item._id);
+            fetch(`http://localhost:2000/class/dec/${item._id}`, {
+                method: 'PATCH'
+            })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if(data.modifiedCount){
+                    refetch();
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: `Available seat decreased`,
+                        showConfirmButton: false,
+                        timer: 1500
+                      })
+                }
+            })
+        });
+    }
+    
     const stripe = useStripe();
     const elements = useElements();
     const { user } = useContext(AuthContext);
@@ -120,7 +144,7 @@ const Checkout = ({classdata,price}) => {
                         },
                     }}
                 />
-                <button className="btn btn-primary btn-sm mt-4" type="submit" disabled={!stripe || !clientSecret || processing}>
+                <button onClick={() => handleClick(classdata)} className="btn btn-primary btn-sm mt-4" type="submit" disabled={!stripe || !clientSecret || processing}>
                     Pay
                 </button>
             </form>
