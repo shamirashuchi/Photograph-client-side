@@ -42,6 +42,7 @@ const Dashboard = () => {
                     isStudent &&
                     <>
                     <li><Link to="/dashboard/myclass"><SiGoogleclassroom></SiGoogleclassroom>Myclass</Link></li>
+                    <li><Link to="/dashboard/enroll"><SiGoogleclassroom></SiGoogleclassroom>Myenrollclass</Link></li>
                     </>
                 }
                 <div className="divider"></div>

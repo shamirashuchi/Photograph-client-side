@@ -83,6 +83,7 @@ const Checkout = ({classdata,price}) => {
                 date: new Date(),
                 quantity: classdata.length,
                 SelectedItems: classdata.map(item => item._id),
+                image:classdata.map(item => item.image),
                 classItems: classdata.map(item => item.selectedItemId),
                 classinfo: classdata.map(item => item),
                 status: 'service pending',
