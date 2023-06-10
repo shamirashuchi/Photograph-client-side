@@ -10,7 +10,8 @@ const AllClass = () => {
         <div className='grid grid-cols-2 gap-4'>
             {classes.map(classItem => <AllclassItem
         key={classItem.id}
-        classItem={classItem}>
+        classItem={classItem}
+        refetch={refetch}>
           </AllclassItem>
       )}
         </div>
