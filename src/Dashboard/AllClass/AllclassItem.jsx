@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const AllclassItem = ({classItem,refetch}) => {
     const {_id,name,image,instructor,instructorImage,email,availableSeats,numStudents,price,status} = classItem;
@@ -63,9 +64,8 @@ const AllclassItem = ({classItem,refetch}) => {
                         status === 'denied' ? <button className="btn btn-secondary ml-3">Denied</button> :
                     <button onClick={() => handleMakeDenied(classItem)}  className="btn btn-secondary ml-3">Deny</button>
                     }
-                    <button className="btn btn-warning ml-3">Send Feedback</button>
+                    <Link to="/dashboard/feedback"><button className="btn btn-warning ml-3">Send Feedback</button></Link>
                     </div>
-                    
                 </div>
             </div>
         </div>

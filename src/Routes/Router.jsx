@@ -16,6 +16,7 @@ import AllClass from "../Dashboard/AllClass/AllClass";
 import Addclass from "../Dashboard/Addclass/Addclass";
 import Payment from "../Dashboard/Payment";
 import Myenroll from "../Dashboard/Myenroll/Myenroll";
+import Feedback from "../Dashboard/Feedback";
 export const router = createBrowserRouter([
     {
       path: "/",
@@ -71,6 +72,10 @@ export const router = createBrowserRouter([
         {
           path:'enroll',
           element:<Myenroll></Myenroll>
+        },
+        {
+          path:'feedback',
+          element:<Feedback></Feedback>
         }
       ]
     }
