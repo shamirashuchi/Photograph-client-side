@@ -4,23 +4,7 @@ const Myenrollclass = ({item}) => {
     const {price,transactionId,quantity,date,itemNames,email} = item;
     return (
         <div>
-            <div className="card  bg-base-100 shadow-xl mx-40">
-                <figure>
-                    <div className='grid grid-cols-3 p-10'>
-                    <div>
-                    <p>{itemNames[0]}</p>
-                    <img className='h-20 w-40' src={item.image[0]} alt="Album"/>
-                    </div>
-                    <div className='ml-0'>
-                    <p>{itemNames[1]}</p>
-                    <img className='h-20 w-40' src={item.image[1]} alt="Album"/>
-                    </div>
-                    <div className='ml-0'>
-                    <p>{itemNames[2]}</p>
-                    <img className='h-20 w-40' src={item.image[2]} alt="Album"/>
-                    </div>
-                    </div>
-                </figure>
+            <div className="card  bg-base-300 shadow-xl mx-40 my-40">
                 <div className="card-body">
                     <p><span className='text-xl font-semibold'>Email:</span> {email}</p>
                     <p><span className='text-xl font-semibold'>Quantity:</span> {quantity}</p>
