@@ -74,6 +74,11 @@ const Myclass = () => {
                                 <td>
                                     <button onClick={() => handleDelete(item)} className="btn btn-ghost bg-red-600  text-white"><FaTrashAlt></FaTrashAlt></button>
                                 </td>
+                                <td>
+                                <Link to={`/dashboard/payment?id=${item.selectedItemId}`}>
+                                        <button className="btn btn-warning w-1/2 ml-56">PAY</button>
+                                </Link>
+                                </td>
                             </tr>)
                         }
 
@@ -81,9 +86,7 @@ const Myclass = () => {
                     </tbody>
                 </table>
             </div>
-            <Link to="/dashboard/payment">
-                    <button className="btn btn-warning w-1/2 ml-56">PAY</button>
-            </Link>
+            
         </div>
     );
 };

@@ -3,15 +3,22 @@ import useSelecteddata from '../../Hooks/useSelecteddata';
 import { Link } from 'react-router-dom';
 import { FaTrashAlt } from "react-icons/fa";
 import Swal from 'sweetalert2';
+import usePayment from '../../Hooks/usePayment';
+import Enrollstudent from './Enrollstudent';
 const Instructormyclass = () => {
     const [classdata,refetch] = useSelecteddata();
+    const [paymentdata] = usePayment();
+    
     const total = classdata.reduce((sum, item) => item.price + sum, 0);
-    const student = classdata.reduce((sum, item) => item.numStudents+ sum, 0);
+    
     return (
         <div className="w-full">
             <div className="uppercase font-semibold h-[60px] flex justify-evenly items-center">
+                        {/* {paymentdata.map((item) => (
+                    <Enrollstudent key={item._id} item={item} />
+                ))} */}
                 <h3 className="text-3xl">Total Class: {classdata.length}</h3>
-                <h3 className="text-3xl">Total Enrolled Student: {student}</h3>
+                {/* <h3 className="text-3xl">Total Enrolled Student: {student}</h3> */}
             </div>
             <div className="overflow-x-auto w-full">
                 <table className="table w-full">

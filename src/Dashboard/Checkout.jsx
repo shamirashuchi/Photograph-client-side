@@ -4,32 +4,33 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { AuthContext } from '../Providers/Authprovider';
 import useAxiosSecure from '../Hooks/useAxiosSecure';
+import Swal from 'sweetalert2';
 
-const Checkout = ({classdata,price}) => {
-    const handleClick = (classdata) => {
-        classdata.map(item => {
-            console.log("Clicked with data:", item.availableSeats);
-            console.log("Clicked with data:", item._id);
-            fetch(`http://localhost:2000/class/dec/${item._id}`, {
-                method: 'PATCH'
+const Checkout = ({classdata,price,refetch,id}) => {
+    const handleClick = (id) => {
+            fetch(`http://localhost:2000/class/dec/${id}`, {
+              method: 'PATCH'
             })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
-                if(data.modifiedCount){
-                    refetch();
-                    Swal.fire({
-                        position: 'top-end',
-                        icon: 'success',
-                        title: `Available seat decreased`,
-                        showConfirmButton: false,
-                        timer: 1500
-                      })
-                }
+              console.log(data);
+              if (data.modifiedCount) {
+                refetch();
+                Swal.fire({
+                  position: 'top-end',
+                  icon: 'success',
+                  title: `Available seat decreased`,
+                  showConfirmButton: false,
+                  timer: 1500
+                });
+              }
             })
-        });
-    }
-    
+            .catch(error => {
+              console.error(error);
+            });
+          }
+        
+      
     const stripe = useStripe();
     const elements = useElements();
     const { user } = useContext(AuthContext);
@@ -43,7 +44,7 @@ const Checkout = ({classdata,price}) => {
         if (price > 0) {
             axiosSecure.post('/create-payment-intent', { price })
                 .then(res => {
-                    console.log(res.data.clientSecret)
+                    //console.log(res.data.clientSecret)
                     setClientSecret(res.data.clientSecret);
                 })
         }
@@ -144,7 +145,7 @@ const Checkout = ({classdata,price}) => {
                         },
                     }}
                 />
-                <button onClick={() => handleClick(classdata)} className="btn btn-primary btn-sm mt-4" type="submit" disabled={!stripe || !clientSecret || processing}>
+                <button onClick={() => handleClick(id)} className="btn btn-primary btn-sm mt-4" type="submit" disabled={!stripe || !clientSecret || processing}>
                     Pay
                 </button>
             </form>
