@@ -3,7 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import AllclassItem from './AllclassItem';
 const AllClass = () => {
     const { data: classes = [], refetch } = useQuery(['class'], async () => {
-        const res = await fetch('http://localhost:2000/class')
+        const res = await fetch('https://photography-school-server-shamirashuchi.vercel.app/class')
         return res.json();
     })
     return (

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const AllclassItem = ({classItem,refetch}) => {
     const {_id,name,image,instructor,instructorImage,email,availableSeats,numStudents,price,status} = classItem;
     const handleMakeApproved = classItem =>{
-        fetch(`http://localhost:2000/class/approve/${_id}`, {
+        fetch(`https://photography-school-server-shamirashuchi.vercel.app/class/approve/${_id}`, {
             method: 'PATCH'
         })
         .then(res => res.json())
@@ -23,7 +23,7 @@ const AllclassItem = ({classItem,refetch}) => {
         })
     }
     const handleMakeDenied = classItem =>{
-        fetch(`http://localhost:2000/class/denied/${_id}`, {
+        fetch(`https://photography-school-server-shamirashuchi.vercel.app/class/denied/${_id}`, {
             method: 'PATCH'
         })
         .then(res => res.json())

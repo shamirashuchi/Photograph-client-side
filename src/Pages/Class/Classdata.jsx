@@ -14,7 +14,7 @@ const Classdata = ({item}) => {
         console.log(item);
         if(user && user.email){
             const selectedItem = {selectedItemId: _id, name, image,instructor,email: user.email,instructorImage,numStudents,availableSeats, price,status}
-            fetch('http://localhost:2000/selects', {
+            fetch('https://photography-school-server-shamirashuchi.vercel.app/selects', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

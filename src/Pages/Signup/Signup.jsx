@@ -20,7 +20,7 @@ const Signup = () => {
                 updateUserProfile(data.name, data.photoURL)
                     .then(() => {
                         const saveUser = { name: data.name, email: data.email,role:'student' }
-                        fetch('http://localhost:2000/users', {
+                        fetch('https://photography-school-server-shamirashuchi.vercel.app/users', {
                             method: 'POST',
                             headers: {
                                 'content-type': 'application/json'

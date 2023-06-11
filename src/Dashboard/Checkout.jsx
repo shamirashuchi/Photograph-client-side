@@ -8,7 +8,7 @@ import Swal from 'sweetalert2';
 
 const Checkout = ({classdata,price,refetch,id,selectedItemId}) => {
     const handleClick = (id) => {
-            fetch(`http://localhost:2000/class/dec/${selectedItemId}`, {
+            fetch(`https://photography-school-server-shamirashuchi.vercel.app/class/dec/${selectedItemId}`, {
               method: 'PATCH'
             })
             .then(res => res.json())

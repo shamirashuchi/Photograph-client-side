@@ -4,7 +4,7 @@ const useInstructorclass = () => {
          const { refetch,data} = useQuery({
             queryKey: ['class'],
             queryFn: async () => {
-                const res = await fetch(`http://localhost:2000/class`)
+                const res = await fetch(`https://photography-school-server-shamirashuchi.vercel.app/class`)
                 return res.json();
             },
         

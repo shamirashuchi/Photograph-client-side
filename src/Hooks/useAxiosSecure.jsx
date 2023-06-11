@@ -9,7 +9,7 @@ const useAxiosSecure = () => {
   const navigate = useNavigate(); 
 
   const axiosSecure = axios.create({
-    baseURL: 'http://localhost:2000', 
+    baseURL: 'https://photography-school-server-shamirashuchi.vercel.app', 
   });
 
   useEffect(() => {

@@ -9,7 +9,7 @@ const AllUser = () => {
         return res.data;
     })
     const handleMakeAdmin = user =>{
-        fetch(`http://localhost:2000/users/admin/${user._id}`, {
+        fetch(`https://photography-school-server-shamirashuchi.vercel.app/users/admin/${user._id}`, {
             method: 'PATCH'
         })
         .then(res => res.json())
@@ -29,7 +29,7 @@ const AllUser = () => {
     }
 
     const handleMakeInstructor = user =>{
-        fetch(`http://localhost:2000/users/instructor/${user._id}`, {
+        fetch(`https://photography-school-server-shamirashuchi.vercel.app/users/instructor/${user._id}`, {
             method: 'PATCH'
         })
         .then(res => res.json())

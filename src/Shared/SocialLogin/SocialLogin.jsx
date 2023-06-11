@@ -17,7 +17,7 @@ const SocialLogin = () => {
                 const loggedInUser = result.user;
                 console.log(loggedInUser);
                 const saveUser = { name: loggedInUser.displayName, email: loggedInUser.email }
-                fetch('http://localhost:2000/users', {
+                fetch('https://photography-school-server-shamirashuchi.vercel.app/users', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
