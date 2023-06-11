@@ -6,9 +6,9 @@ import { AuthContext } from '../Providers/Authprovider';
 import useAxiosSecure from '../Hooks/useAxiosSecure';
 import Swal from 'sweetalert2';
 
-const Checkout = ({classdata,price,refetch,id}) => {
+const Checkout = ({classdata,price,refetch,id,selectedItemId}) => {
     const handleClick = (id) => {
-            fetch(`http://localhost:2000/class/dec/${id}`, {
+            fetch(`http://localhost:2000/class/dec/${selectedItemId}`, {
               method: 'PATCH'
             })
             .then(res => res.json())
@@ -19,7 +19,7 @@ const Checkout = ({classdata,price,refetch,id}) => {
                 Swal.fire({
                   position: 'top-end',
                   icon: 'success',
-                  title: `Available seat decreased`,
+                  title: `Available seat decreased and number of student increased`,
                   showConfirmButton: false,
                   timer: 1500
                 });
@@ -100,7 +100,14 @@ const Checkout = ({classdata,price,refetch,id}) => {
         setProcessing(false)
         if (paymentIntent.status === 'succeeded') {
             setTransactionId(paymentIntent.id);
-            // save payment information to the server
+            //remove the item whose payment is done form classdata
+            // Remove the purchased item from classdata
+            // const remainingItems = classdata.filter((item) => {
+            //     return !paymentIntent.itemNames.includes(item.name);
+            // });
+        
+            // // Update classdata with the remaining items
+            // classdata = remainingItems;
             const payment = {
                 email: user?.email,
                 transactionId: paymentIntent.id,
@@ -114,13 +121,18 @@ const Checkout = ({classdata,price,refetch,id}) => {
                 status: 'service pending',
                 itemNames: classdata.map(item => item.name)
             }
-            axiosSecure.post('/payments', payment)
-                .then(res => {
-                    console.log(res.data);
-                    // if (res.data.result.insertedId) {
-                    //     // display confirm
-                    // }
-                })
+            axiosSecure.post('/payments', { ...payment, id })
+            .then(res => {
+              console.log(res.data);
+              // if (res.data.result.insertedId) {
+              //     // display confirm
+              // }
+            })
+            .catch(error => {
+              console.error(error);
+            });
+          
+
         }
 
 

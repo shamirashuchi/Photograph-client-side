@@ -75,9 +75,19 @@ const Myclass = () => {
                                     <button onClick={() => handleDelete(item)} className="btn btn-ghost bg-red-600  text-white"><FaTrashAlt></FaTrashAlt></button>
                                 </td>
                                 <td>
-                                <Link to={`/dashboard/payment?id=${item.selectedItemId}`}>
+                                {/* <Link to={`/dashboard/payment?id=${item.selectedItemId}`}>
                                         <button className="btn btn-warning w-1/2 ml-56">PAY</button>
+                                </Link> */}
+                                {/* <Link to={`/dashboard/payment?id=${item._id}${item.selectedItemId}`}>
+                                        <button className="btn btn-warning w-1/2 ml-56">PAY</button>
+                                </Link> */}
+                                {/* <Link to={`/dashboard/payment?id=${item._id}${item.selectedItemId}`}>
+                                <button className="btn btn-warning w-1/2 ml-56">PAY</button>
+                                </Link> */}
+                                <Link to={`/dashboard/payment?id=${item._id}&selectedItemId=${item.selectedItemId}`}>
+                                <button className="btn btn-warning w-1/2 ml-56">PAY</button>
                                 </Link>
+
                                 </td>
                             </tr>)
                         }

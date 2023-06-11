@@ -58,6 +58,7 @@ const Classdata = ({item}) => {
                         <h2><span className='font-semibold text-xl'>Classname:</span> {name}</h2>
                         <p><span className='font-semibold text-xl'>Instructorname:</span> {instructor}</p>
                         <p><span className='font-semibold text-xl'>AvailableSeats:</span> {availableSeats}</p>
+                        <p><span className='font-semibold text-xl'>Num of Students:</span> {numStudents}</p>
                         <p><span className='font-semibold text-xl'>Price:</span> ${price}</p>
                         <div className="card-actions justify-end">
                         <button onClick={() => handleselecteddata(item)} className="btn bg-purple-600">Select</button>
