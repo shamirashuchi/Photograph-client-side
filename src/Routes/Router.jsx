@@ -18,6 +18,7 @@ import Payment from "../Dashboard/Payment";
 import Myenroll from "../Dashboard/Myenroll/Myenroll";
 import Feedback from "../Dashboard/Feedback";
 import Instructormyclass from "../Pages/Dashboard/Instructormyclass";
+import Paymenthistory from "../Dashboard/Paymenthistrory/Paymenthistory";
 export const router = createBrowserRouter([
     {
       path: "/",
@@ -81,6 +82,10 @@ export const router = createBrowserRouter([
         {
           path:"instructormyclass",
           element:<Instructormyclass></Instructormyclass>
+        },
+        {
+          path:"paymenthistory",
+          element:<Paymenthistory></Paymenthistory>
         }
       ]
     }

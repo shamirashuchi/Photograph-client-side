@@ -43,6 +43,7 @@ const Dashboard = () => {
                     <>
                     <li><Link to="/dashboard/myclass"><SiGoogleclassroom></SiGoogleclassroom>Myclass</Link></li>
                     <li><Link to="/dashboard/enroll"><SiGoogleclassroom></SiGoogleclassroom>Myenrollclass</Link></li>
+                    <li><Link to="/dashboard/paymenthistory">Mypaymenthistory</Link></li>
                     </>
                 }
                 <div className="divider"></div>
